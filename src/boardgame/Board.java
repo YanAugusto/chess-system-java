@@ -25,12 +25,15 @@ public class Board {
 		return columns;
 	}
 
+	//Ele verifica se a posição da peça existe e se sim, ele returna a peça com a matriz coordenada da posição
+	
 	public Piece piece(int row, int column) {
 		if (!positionExists(row, column)) {
 			throw new BoardException("Position not on the board");
 		}
 		return pieces[row][column];
 	}
+	
 
 	public Piece piece(Position position) {
 		if (!positionExists(position)) {
@@ -38,6 +41,8 @@ public class Board {
 		}
 		return pieces[position.getRow()][position.getColumn()];
 	}
+	
+	//Serve para verificar se existe uma peça na posição escolhida. Se não existir, ele será mudado para a posição
 
 	public void placePiece(Piece piece, Position position) {
 		if (thereIsAPiece(position)) {
@@ -46,7 +51,9 @@ public class Board {
 		pieces[position.getRow()][position.getColumn()] = piece;
 		piece.position = position;
 	}
-
+	
+	//Ele remove uma peça
+	
 	public Piece removePiece(Position position) {
 		if(!positionExists(position)) {
 			throw new BoardException("Position not on the board");
@@ -60,6 +67,7 @@ public class Board {
 		return aux;
 	}
 	
+	//Serve para verificar se uma determinada posição existe
 	
 	private boolean positionExists(int row, int column) {
 
@@ -71,6 +79,8 @@ public class Board {
 		return positionExists(position.getRow(), position.getColumn());
 	}
 
+	//Serve para verificar se existe uma peça na posição desejada
+	
 	public boolean thereIsAPiece(Position position) {
 		if (!positionExists(position)) {
 			throw new BoardException("Position not on the board");

@@ -17,11 +17,15 @@ public abstract class Piece {
 
 	public abstract boolean[][] possibleMoves();
 
+	//retorna os possiveis movimentos de uma peça
+	
 	public boolean possibleMove(Position position) {
 
 		return possibleMoves()[position.getRow()][position.getColumn()];
 	}
 
+	//ele testa num vetor booleano se é possivel fazer qualquer movimento de uma peça
+	
 	public boolean isThereAnyPossibleMove() {
 		boolean[][] mat = possibleMoves();
 		for (int i = 0; i < mat.length; i++) {

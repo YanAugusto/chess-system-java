@@ -32,6 +32,8 @@ public class Position {
 		this.column = column;
 	}
 	
+	//Serve para mudar as posições de uma peça
+	
 	public void setValues(int row, int column) {
 		this.row = row;
 		this.column = column;

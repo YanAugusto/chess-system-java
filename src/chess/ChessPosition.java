@@ -25,7 +25,8 @@ public class ChessPosition {
 	public int getRow() {
 		return row;
 	}
-
+	
+	//Criação do sistema de coordenadas
 	
 	protected Position toPosition()
 	{
